@@ -1,10 +1,10 @@
-Ir a _File > Preferences > Keyboard Shortcuts_
+To create key bindings: Go to _File_ > _Preferences_ > _Keyboard Shortcuts_
 
-Luego hacer click en el siguiente botón (Open keyboard shortcuts)
+Then click on the following button (Open keyboard shortcuts).
 
-![keyBindings-1.png](assets/images/keyBindings-1.png)
+![keyBindings-1.png](/assets/images/keyBindings-1.png)
 
-Se abrirá el archivo **keybindings.json**, dentro de él escribimos las asociaciones
+The **keybindings.json** file will open. Within it, you can write the associations.
 
 
 ```
@@ -19,3 +19,5 @@ Se abrirá el archivo **keybindings.json**, dentro de él escribimos las asociac
 	}
 ]
 ```
+
+In this case, when we press Ctrl+Shift+L, we will achieve the desired result. It will write the console.log with the selected text and its description.
