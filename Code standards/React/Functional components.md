@@ -103,13 +103,13 @@ function ExampleComponent(props) {
 
 	/* ===== Memos ===== */
 	const autoComplete = useMemo(() => {
-	let value = 'off';
+		let value = 'off';
 
-	if (currentPassword || newPassword) {
-		value = newPassword ? 'new-password' : 'current-password';
-	}
+		if (currentPassword || newPassword) {
+			value = newPassword ? 'new-password' : 'current-password';
+		}
 
-	return value;
+		return value;
 	}, [currentPassword, newPassword]);
 
 	/* ===== Variables ===== */
