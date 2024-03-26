@@ -1,7 +1,7 @@
 In this article, a specific order and organization for a functional component in React are proposed.
 
 
-```
+```javascript
 Function start...
 
 Destructuring of component properties.
@@ -38,7 +38,7 @@ Destructuring of component properties.
 The form "get[VALUE_TO_BE_RETURNED]" is used for methods that return values.
 Example: Texts, arrays, numbers, objects, etc.
 
-```
+```jsx
 function getValue() {
 	var value;
 	...
@@ -49,7 +49,7 @@ function getValue() {
 
 The form "render[CONTENT_TO_SHOW]" is used for methods that return HTML/JSX content.
 
-```
+```jsx
 function renderElement() {
 	return (
 		<div>
@@ -61,7 +61,7 @@ function renderElement() {
 
 #### Example of a component code
 
-```
+```jsx
 import {
     useEffect, useCallback, useMemo, useRef, useState
 } from 'react';

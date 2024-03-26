@@ -7,7 +7,7 @@ Then click on the following button (Open keyboard shortcuts).
 The **keybindings.json** file will open. Within it, you can write the associations.
 
 
-```
+```javascript
 [
 	{
 		"args": {

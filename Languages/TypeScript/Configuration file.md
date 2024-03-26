@@ -4,7 +4,7 @@ First we must create a file in the root of our project with the name ```tsconfig
 
 To create a base configuration, we will create an object with the following shape:
 
-```
+```javascript
 {
 	"compilerOptions": {
 		"allowJs": true,
