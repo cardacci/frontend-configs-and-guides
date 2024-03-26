@@ -17,15 +17,16 @@ To create a base configuration, we will create an object with the following shap
 	"include": ["src/**/*"]
 }
 ```
-#### compilerOptions
 
-**allowJs**
+#### [compilerOptions](https://www.typescriptlang.org/tsconfig#compilerOptions)
+
+**[allowJs](https://www.typescriptlang.org/tsconfig#allowJs)**
 Allow JavaScript files to be imported inside our project, instead of just .ts and .tsx files
 
-**checkJs**
+**[checkJs](https://www.typescriptlang.org/tsconfig#checkJs)**
 Works in tandem with allowJs. When checkJs is enabled then errors are reported in JavaScript files. This is the equivalent of including ```// @ts-check``` at the top of all JavaScript files which are included in your project.
 
-**moduleResolution**
+**[moduleResolution](https://www.typescriptlang.org/tsconfig#moduleResolution)**
 Specify the module resolution strategy.
 
 - ```'bundler'``` for use with bundlers. Like ```node16``` and ```nodenext```, this mode supports package.json ```"imports"``` and ```"exports"```, but unlike the Node.js resolution modes, ```bundler``` never requires file extensions on relative paths in imports.
@@ -34,10 +35,10 @@ bundler does not support resolution of ```require``` calls. In TypeScript files,
 - ```'node10'``` (previously called ```'node'```) for Node.js versions older than v10, which only support CommonJS ```require```. You probably won’t need to use ```node10``` in modern code.
 - ```'node16'``` or ```'nodenext'``` for modern versions of Node.js. Node.js v12 and later supports both ECMAScript imports and CommonJS ```require```, which resolve using different algorithms. These moduleResolution values, when combined with the corresponding module values, picks the right algorithm for each resolution based on whether Node.js will see an ```import``` or ```require``` in the output JavaScript code.
 
-**noEmit**
+**[noEmit](https://www.typescriptlang.org/tsconfig#noEmit)**
 Do not emit compiler output files like JavaScript source code, source-maps or declarations.
 
-**outDir**
+**[outDir](https://www.typescriptlang.org/tsconfig#outDir)**
 If specified, ```.js``` (as well as ```.d.ts```, ```.js.map```, etc.) files will be emitted into this directory. The directory structure of the original source files is preserved.
 
 
