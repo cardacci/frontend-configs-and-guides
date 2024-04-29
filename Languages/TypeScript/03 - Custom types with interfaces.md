@@ -1,6 +1,14 @@
 #### Custom types with interfaces
 
 ```typescript
+type ContactName = string;
+
+enum ContactStatus {
+	Active = "active",
+	Inactive = "inactive",
+	New = "new"
+}
+
 interface Address {
 	line1: string;
 	line2: string;
@@ -12,7 +20,8 @@ interface Address {
 interface Contact extends Address {
 	birthdate?: Date;
 	id: number;
-	name: string;
+	name: ContactName;
+	status: ContactStatus;
 }
 
 let primaryContact: Contact = {
@@ -22,6 +31,7 @@ let primaryContact: Contact = {
 	line2: '135',
 	name: 'Gabriel Fernandez',
 	postalCode: '7109',
-	province: 'Buenos Aires'
+	province: 'Buenos Aires',
+	status: ContactStatus.Active
 }
 ```

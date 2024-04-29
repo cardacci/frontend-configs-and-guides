@@ -1,3 +1,5 @@
+#### Configuration file
+
 In this article, we will explain the base configuration file to use TypeScript in our projects.
 
 First we must create a file in the root of our project with the name ```tsconfig.json```
