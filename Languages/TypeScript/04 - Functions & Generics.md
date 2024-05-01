@@ -4,9 +4,9 @@ In this section, we will see how to type functions.
 
 ```typescript
 interface Contact {
+	clone(name: string): Contact
 	id: number;
 	name: string;
-	clone(name: string): Contact
 }
 
 function clone(source: Contact): Contact {
