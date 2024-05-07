@@ -29,9 +29,9 @@ function getValue<T extends keyof typeof person>(key: T): typeof person[T] {
 	return person[key];
 }
 
-const age: number = getValue("age");
-const city: string = getValue("city");
-const name: string = getValue("name");
+const age: number = getValue('age');
+const city: string = getValue('city');
+const name: string = getValue('name');
 ```
 
 Here, ```T extends keyof typeof person``` ensures that key is one of the valid keys of the person object, and ```typeof person[T]``` gives us the type of the value corresponding to that key.

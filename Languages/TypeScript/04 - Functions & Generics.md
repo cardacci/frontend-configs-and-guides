@@ -37,7 +37,7 @@ function getFirstElement<T>(array: T[]): T | undefined {
 const numbers: number[] = [1, 2, 3, 4, 5];
 const firstNumber: number | undefined = getFirstElement(numbers);
 
-const words: string[] = ["Hello", "World"];
+const words: string[] = ['Hello', 'World'];
 const firstWord: string | undefined = getFirstElement(words);
 ```
 
