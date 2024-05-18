@@ -22,8 +22,16 @@ Now, we can use ```ContactsDatabase``` to define an object that stores contact i
 
 ```typescript
 const contacts: ContactsDatabase = {
-	1: { email: 'john@example.com', name: 'John Doe', phone: '2257558899' },
-	2: { email: 'jane@example.com', name: 'Jane Smith', phone: '2235887466' }
+	1: {
+		email: 'john.d@example.com',
+		name: 'John Doe',
+		phone: '2257558899'
+	},
+	2: {
+		email: 'jane.s@example.com',
+		name: 'Jane Smith',
+		phone: '2235887466'
+	}
 };
 ```
 
