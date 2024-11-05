@@ -40,7 +40,7 @@ Example: Texts, arrays, numbers, objects, etc.
 
 ```jsx
 function getValue() {
-	var value;
+	const value;
 	...
 
 	return value;
@@ -62,16 +62,18 @@ function renderElement() {
 #### Example of a component code
 
 ```jsx
+import PropTypes from 'prop-types';
 import {
     useEffect, useCallback, useMemo, useRef, useState
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGlobalContext } from 'custom-hooks/index';
 import { usePortfolioTypes } from 'custom-hooks/redux-hooks';
-import { defaultValuesForNumberInString } from 'input-states';
 
-function ExampleComponent(props) {
-	const { name, var1, var2 } = props;
+export default function ExampleComponent(props) {
+	const {
+		name, onCreateComponent, var1, var2
+	} = props;
 
 	/* ===== Redux ===== */
 	const crossReducer = useSelector(state => state.cross);
@@ -88,7 +90,7 @@ function ExampleComponent(props) {
 	const [count, setCount] = useState(0);
 	/* ===== State: Inputs ===== */
 	// This section contains the states corresponding to Inputs to be sent in a service.
-	const [amount, setAmount] = useState(defaultValuesForNumberInString);
+	const [amount, setAmount] = useState(0);
 	/* ===== State: Form data ===== */
 	// In this section are the states related to the behavior of the form (if it exists).
 	const [entityProgressType, setEntityProgressType] = useState(null);
@@ -116,7 +118,7 @@ function ExampleComponent(props) {
 	const const1 = 1989;
 	const const2 = 1993;
 
-	// MÉTODOS (*)
+	// METHODS (*)
 	function method1() {
 		const auxA = var1;
 	}
@@ -124,10 +126,12 @@ function ExampleComponent(props) {
 	function method2() {
 		const auxA = var1;
 		const auxB = var2;
+
+		return auxA + auxB;
 	}
 
 	function getValue() {
-		var value;
+		const value;
 		...
 		return value;
 	}
@@ -149,9 +153,12 @@ function ExampleComponent(props) {
 	}, [count]);
 
 	/* ===== Effects ===== */
+	// Mount
 	useEffect(() => {
 		document.title = `You clicked ${count} times`;
-	});
+
+		onCreateComponent();
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener('keydown', handleKeyDown, { capture: false });
@@ -180,4 +187,14 @@ function ExampleComponent(props) {
 		</div>
 	);
 }
+
+ExampleComponent.defaultProps = { onCreateComponent: () => {} };
+
+ExampleComponent.propTypes = {
+	name: PropTypes.string.isRequired,
+	onCreateComponent: PropTypes.func,
+	var1: PropTypes.number.isRequired,
+	var2: PropTypes.number.isRequired
+};
+
 ```
