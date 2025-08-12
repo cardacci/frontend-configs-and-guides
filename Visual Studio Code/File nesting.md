@@ -15,12 +15,12 @@ We can create as many patterns as we want, in this case we are going to edit the
 
 We edit the value so that it looks like this:
 ```
-yarn.lock, *.js, *.json, *.md, .babelrc, .editorconfig, .eslintignore, .eslintrc, .gitignore, .npmrc, .yarnrc
+yarn.lock, *.js, *.json, *.md, *.ts, .babelrc, .editorconfig, .eslintignore, .eslintrc, .gitignore, .npmrc, .prettierrc, .yarnrc
 ```
 
 ![file-nesting-3.png](/assets/images/visual-studio-code/file-nesting-3.png)
 
-In this way we are indicating some particular files (yarn.lock, .babelrc, .editorconfig, .eslintignore, .eslintrc, .gitignore, .npmrc, .yarnrc) and on the other hand extensions (*.js, *.json, *.md), with this second mode, all files with extension .js, .json and .md will be nested independently of their name.
+In this way we are indicating some particular files (yarn.lock, .babelrc, .editorconfig, .eslintignore, .eslintrc, .gitignore, .npmrc, .prettierrc, .yarnrc) and on the other hand extensions (*.js, *.json, *.md, *.ts), with this second mode, all files with extension .js, .json and .md will be nested independently of their name.
 
 This is the result we will get:
 
