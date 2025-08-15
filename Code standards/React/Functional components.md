@@ -1,10 +1,12 @@
+# JSX Functional Components Structure Guide
+
 In this article, a specific order and organization for a functional component in React are proposed.
 
+## Component Structure
 
 ```javascript
-Function start...
-
-Destructuring of component properties.
+// Component function start
+// Props destructuring with typing
 
 /* ===== Redux ===== */
 
