@@ -1,10 +1,12 @@
+# JSX Functional Components Structure Guide
+
 In this article, a specific order and organization for a functional component in React are proposed.
 
+## Component Structure
 
 ```javascript
-Function start...
-
-Destructuring of component properties.
+// Component function start
+// Props destructuring with typing
 
 /* ===== Redux ===== */
 
@@ -20,9 +22,9 @@ Destructuring of component properties.
 
 /* ===== Requests ===== */
 
-/* ===== Variables ===== */
+/* ===== Constants & Variables ===== */
 
-// COMPONENT'S OWN METHODS
+/* ===== Functions ===== */
 
 /* ===== Callbacks ===== */
 
@@ -114,11 +116,11 @@ export default function ExampleComponent(props) {
 		return value;
 	}, [currentPassword, newPassword]);
 
-	/* ===== Variables ===== */
+	/* ===== Constants & Variables ===== */
 	const const1 = 1989;
 	const const2 = 1993;
 
-	// METHODS (*)
+	/* ===== Functions ===== */
 	function method1() {
 		const auxA = var1;
 	}
@@ -168,7 +170,6 @@ export default function ExampleComponent(props) {
 		};
 	}, [handleKeyDown]);
 
-	// JSX (*)
 	return (
 		<div>
 			{renderElement()}
