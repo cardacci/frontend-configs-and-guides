@@ -64,6 +64,7 @@ const User: React.FC = () => {
 		// Never do this
 		name: string;
 	}
+
 	return <div />;
 };
 ```
@@ -303,8 +304,13 @@ const UserList: React.FC<UserListProps> = ({ initialUsers, onUserSelect }) => {
 				key={user.id}
 				onClick={() => handleSelect(user)}
 			>
-				<span>{user.email}</span>
-				<strong>{user.name}</strong>
+				<span>
+					{user.email}
+				</span>
+
+				<strong>
+					{user.name}
+				</strong>
 			</div>
 		);
 	}
@@ -386,9 +392,7 @@ const UserListPage: React.FC<UserListPageProps> = ({ defaultFilter = {}, onSelec
 	/* ===== State ===== */
 	const [search, setSearch] = useState(defaultFilter.search ?? '');
 	const [selectedId, setSelectedId] = useState<number | null>(null);
-	const [sortDirection, setSortDirection] = useState<SortDirection>(
-		defaultFilter.sortDirection ?? SortDirection.ASC
-	);
+	const [sortDirection, setSortDirection] = useState<SortDirection>(defaultFilter.sortDirection ?? SortDirection.ASC);
 	const [sortField, setSortField] = useState<SortField>(defaultFilter.sortField ?? 'name');
 
 	/* ===== Refs ===== */
@@ -400,6 +404,7 @@ const UserListPage: React.FC<UserListPageProps> = ({ defaultFilter = {}, onSelec
 		const filtered = users.filter((user) =>
 			user.name.toLowerCase().includes(search.toLowerCase())
 		);
+
 		return sortByName(filtered, sortField, sortDirection).slice(0, MAX_VISIBLE_USERS);
 	}, [search, sortDirection, sortField, users]);
 
@@ -427,6 +432,7 @@ const UserListPage: React.FC<UserListPageProps> = ({ defaultFilter = {}, onSelec
 	const handleSearchChange = useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => {
 			const value = e.target.value;
+
 			debouncedSearch(value);
 			setSearch(value);
 		},
@@ -478,7 +484,9 @@ const UserListPage: React.FC<UserListPageProps> = ({ defaultFilter = {}, onSelec
 				</button>
 			</div>
 
-			<p className="result-count">{isLoading ? 'Loading...' : `${resultCount} result(s)`}</p>
+			<p className="result-count">
+				{isLoading ? 'Loading...' : `${resultCount} result(s)`}
+			</p>
 
 			<div className="user-list" ref={listContainerRef}>
 				{hasResults ? (

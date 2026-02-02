@@ -260,7 +260,6 @@ const Status = Object.freeze({
 
 /* ===== Component Function ===== */
 function UserList({ initialUsers, onUserSelect }) {
-
 	/* ===== State ===== */
 	const [selectedId, setSelectedId] = useState(null);
 
@@ -276,8 +275,13 @@ function UserList({ initialUsers, onUserSelect }) {
 				key={user.id}
 				onClick={() => handleSelect(user)}
 			>
-				<span>{user.email}</span>
-				<strong>{user.name}</strong>
+				<span>
+					{user.email}
+				</span>
+
+				<strong>
+					{user.name}
+				</strong>
 			</div>
 		);
 	}
@@ -342,11 +346,11 @@ const SortDirection = Object.freeze({
 	DESC: 'desc',
 });
 
+const DEFAULT_SORT_FIELD = 'name';
 const PLACEHOLDER_TEXT = 'Search users...';
 
 /* ===== Component Function ===== */
 function UserListPage({ defaultFilter = {}, onSelectionChange }) {
-
 	/* ===== Redux ===== */
 	const dispatch = useDispatch();
 	const isLoading = useSelector((state) => state.users.isLoading);
@@ -358,10 +362,8 @@ function UserListPage({ defaultFilter = {}, onSelectionChange }) {
 	/* ===== State ===== */
 	const [search, setSearch] = useState(defaultFilter.search ?? '');
 	const [selectedId, setSelectedId] = useState(null);
-	const [sortDirection, setSortDirection] = useState(
-		defaultFilter.sortDirection ?? SortDirection.ASC
-	);
-	const [sortField, setSortField] = useState(defaultFilter.sortField ?? 'name');
+	const [sortDirection, setSortDirection] = useState(defaultFilter.sortDirection ?? SortDirection.ASC);
+	const [sortField, setSortField] = useState(defaultFilter.sortField ?? DEFAULT_SORT_FIELD);
 
 	/* ===== Refs ===== */
 	const listContainerRef = useRef(null);
@@ -372,6 +374,7 @@ function UserListPage({ defaultFilter = {}, onSelectionChange }) {
 		const filtered = users.filter((user) =>
 			user.name.toLowerCase().includes(search.toLowerCase())
 		);
+
 		return sortByName(filtered, sortField, sortDirection).slice(0, MAX_VISIBLE_USERS);
 	}, [search, sortDirection, sortField, users]);
 
@@ -399,6 +402,7 @@ function UserListPage({ defaultFilter = {}, onSelectionChange }) {
 	const handleSearchChange = useCallback(
 		(e) => {
 			const value = e.target.value;
+
 			debouncedSearch(value);
 			setSearch(value);
 		},
@@ -422,16 +426,16 @@ function UserListPage({ defaultFilter = {}, onSelectionChange }) {
 
 	/* ===== Effects ===== */
 	useEffect(() => {
+		searchInputRef.current?.focus();
+	}, []);
+
+	useEffect(() => {
 		dispatch(fetchUsers());
 	}, [dispatch]);
 
 	useEffect(() => {
 		onSelectionChange?.(selectedId);
 	}, [onSelectionChange, selectedId]);
-
-	useEffect(() => {
-		searchInputRef.current?.focus();
-	}, []);
 
 	/* ===== JSX Return ===== */
 	return (
@@ -444,12 +448,15 @@ function UserListPage({ defaultFilter = {}, onSelectionChange }) {
 					type="text"
 					value={search}
 				/>
+
 				<button onClick={handleSortToggle}>
 					Sort: {sortField} ({sortDirection})
 				</button>
 			</div>
 
-			<p className="result-count">{isLoading ? 'Loading...' : `${resultCount} result(s)`}</p>
+			<p className="result-count">
+				{isLoading ? 'Loading...' : `${resultCount} result(s)`}
+			</p>
 
 			<div className="user-list" ref={listContainerRef}>
 				{hasResults ? (
@@ -472,7 +479,7 @@ UserListPage.propTypes = {
 	defaultFilter: PropTypes.shape({
 		search: PropTypes.string,
 		sortDirection: PropTypes.oneOf(Object.values(SortDirection)),
-		sortField: PropTypes.oneOf(['createdAt', 'email', 'name']),
+		sortField: PropTypes.oneOf(['createdAt', 'email', DEFAULT_SORT_FIELD]),
 	}),
 	onSelectionChange: PropTypes.func,
 };
