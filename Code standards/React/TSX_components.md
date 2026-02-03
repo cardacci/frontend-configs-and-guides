@@ -52,7 +52,7 @@ interface UserProps {
 	name: string;
 }
 
-const User: React.FC<UserProps> = ({ name }) => <div>{name}</div>;
+const User = ({ name }: UserProps) => <div>{name}</div>;
 ```
 
 **❌ DON'T: Define types inside the component function body**
@@ -288,7 +288,7 @@ interface UserListProps {
 }
 
 /* ===== Component Function ===== */
-const UserList: React.FC<UserListProps> = ({ initialUsers, onUserSelect }) => {
+const UserList = ({ initialUsers, onUserSelect }: UserListProps) => {
 	/* ===== State ===== */
 	const [selectedId, setSelectedId] = useState<number | null>(null);
 
@@ -380,7 +380,7 @@ interface UserListPageProps {
 }
 
 /* ===== Component Function ===== */
-const UserListPage: React.FC<UserListPageProps> = ({ defaultFilter = {}, onSelectionChange }) => {
+const UserListPage = ({ defaultFilter = {}, onSelectionChange }: UserListPageProps) => {
 	/* ===== Redux ===== */
 	const dispatch = useDispatch();
 	const isLoading = useSelector((state: RootState) => state.users.isLoading);
