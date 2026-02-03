@@ -59,7 +59,7 @@ const User = ({ name }: UserProps) => <div>{name}</div>;
 
 ```tsx
 // ❌ Wrong: recreated on every render, not exportable, pollutes component scope
-const User: React.FC = () => {
+const User = () => {
 	interface UserProps {
 		// Never do this
 		name: string;
