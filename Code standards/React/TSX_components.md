@@ -58,7 +58,7 @@ const User = ({ name }: UserProps) => <div>{name}</div>;
 **❌ DON'T: Define types inside the component function body**
 
 ```tsx
-// ❌ Wrong: recreated on every render, not exportable, pollutes component scope
+// ❌ Wrong: not exportable, pollutes component scope
 const User = () => {
 	interface UserProps {
 		// Never do this
@@ -69,9 +69,9 @@ const User = () => {
 };
 ```
 
-Defining types outside gives you better performance (no re-creation on each render),
-reusability across components, cleaner separation of concerns, better IDE support and
-IntelliSense, and the ability to export them for testing and reuse.
+Defining types outside gives you reusability across components, cleaner separation of
+concerns, better IDE support and IntelliSense, and the ability to export them for
+testing and reuse.
 
 ---
 
