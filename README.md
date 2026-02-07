@@ -89,9 +89,7 @@ frontend-configs-and-guides/
 │
 ├── 📂 assets/                       # Static resources
 │   └── ...
-│
-├── LICENSE                          # MIT License
-└── README.md                        # This file
+...
 ```
 
 ---
@@ -204,8 +202,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## Author
 
-- GitHub: [@cardacci](https://github.com/cardacci)
-- LinkedIn: [Gabriel Cardacci](https://www.linkedin.com/in/cardacci/)
+- [GitHub](https://github.com/cardacci)
+- [LinkedIn](https://www.linkedin.com/in/cardacci/)
+- [Website](https://cardacci.github.io/i/)
 
 ---
 
