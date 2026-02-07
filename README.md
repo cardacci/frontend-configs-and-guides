@@ -24,6 +24,7 @@
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Content](#content)
+  - [AI Integration](#ai-integration)
   - [Code Standards](#code-standards)
   - [Languages](#languages)
   - [Visual Studio Code](#visual-studio-code)
@@ -51,10 +52,15 @@ Whether you're a beginner looking to learn best practices or an experienced deve
 ```
 frontend-configs-and-guides/
 │
+├── 📂 AI/                            # AI agent integration guides
+│   └── 📂 Claude/                    # Claude-specific setup
+│       └── CLAUDE.md                 # How to use .claude folder with standards
+│
 ├── 📂 Code standards/               # Framework-specific standards
 │   └── 📂 React/                    # React component guidelines
 │       ├── JSX_components.md        # JavaScript React components
 │       └── TSX_components.md        # TypeScript React components
+│
 ├── 📂 Languages/                    # Programming language guides
 │   ├── 📂 JavaScript/               # JavaScript best practices (7 guides)
 │   │   ├── 01 - Variables and constants.md
@@ -91,6 +97,17 @@ frontend-configs-and-guides/
 ---
 
 ## Content
+
+### AI Integration
+
+Guides for integrating coding standards with AI agents so they generate code that
+follows your project conventions automatically:
+
+- **[Claude — `CLAUDE.md` Setup](AI/Claude/CLAUDE.md)** — How to configure a `.claude`
+  directory with a `CLAUDE.md` index file so that Claude reads and applies your React
+  component standards (JSX/TSX) when generating code.
+
+---
 
 ### Code Standards
 
