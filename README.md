@@ -26,8 +26,8 @@
 - [Content](#content)
   - [AI Integration](#ai-integration)
   - [Code Standards](#code-standards)
+  - [IDE](#ide)
   - [Languages](#languages)
-  - [Visual Studio Code](#visual-studio-code)
 - [Contributing](#contributing)
 - [License](#license)
 - [Author](#author)
@@ -40,7 +40,7 @@ This repository serves as a **comprehensive reference** for frontend developers,
 
 - **Language Guides** - In-depth best practices for JavaScript and TypeScript
 - **Framework Standards** - Component structure guidelines for React (JSX & TSX)
-- **IDE Configurations** - Visual Studio Code tips and productivity enhancements
+- **IDE Configurations** - Visual Studio Code and Kiro tips and productivity enhancements
 - **Clean Code Principles** - Patterns and practices for maintainable code
 
 Whether you're a beginner looking to learn best practices or an experienced developer seeking a quick reference, this repository has something for you.
@@ -82,7 +82,7 @@ frontend-configs-and-guides/
 │       ├── 08 - Decorators.md
 │       └── 09 - Modules.md
 │
-├── 📂 Visual Studio Code/           # IDE configuration guides
+├── 📂 IDE/                          # IDE configuration guides (VS Code, Kiro)
 │   ├── File nesting.md              # Organize project files visually
 │   ├── Key bindings.md              # Custom keyboard shortcuts
 │   └── Workspace indentation.md     # Consistent code formatting
@@ -161,15 +161,15 @@ From configuration to advanced types:
 
 ---
 
-### Visual Studio Code
+### IDE
 
-Productivity enhancements for VS Code:
+Productivity enhancements for Visual Studio Code and Kiro (Kiro is built on VS Code, so the key bindings guide applies to both):
 
-| Guide                     | Description                                                     |
-| ------------------------- | --------------------------------------------------------------- |
-| **File Nesting**          | Collapse config files under `package.json` for cleaner explorer |
-| **Key Bindings**          | Custom keyboard shortcuts for faster development                |
-| **Workspace Indentation** | Per-project formatting consistency                              |
+| Guide                                                | Description                                                                     |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **[File Nesting](IDE/File%20nesting.md)**            | Collapse config files under `package.json` for cleaner explorer                 |
+| **[Key Bindings](IDE/Key%20bindings.md)**            | Custom keyboard shortcuts, including a `console.log` of the selected text       |
+| **[Workspace Indentation](IDE/Workspace%20indentation.md)** | Per-project formatting consistency                                       |
 
 Each guide includes step-by-step instructions with screenshots.
 
